@@ -13,5 +13,5 @@ import { FooterComponent } from './Components/footer/footer.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'ToDoList';
+  title = 'TodoJsonServer';
 }

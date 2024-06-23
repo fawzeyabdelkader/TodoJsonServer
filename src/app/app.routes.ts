@@ -5,9 +5,9 @@ import { TodoDetailsComponent } from './Components/todo-details/todo-details.com
 
 export const routes: Routes = [
   { path: '', redirectTo: '/todos', pathMatch: 'full' },
-   { path: 'todos', component: TodosComponent,title:'Todos' },
-  { path: 'todos/:id', component: TodoDetailsComponent,title:'to do Details' },
- 
+   { path: 'todos', component: TodosComponent,title:'TodoJsonServer' },
+  { path: 'todos/:id', component: TodoDetailsComponent,title:'Todo JsonServer Details' },
+
   { path: '**', component: NotfoundComponent,title:'Not Found' },
 
  ];

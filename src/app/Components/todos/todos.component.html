@@ -1,0 +1,78 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+          <div class="card-body py-4 px-4 px-md-5">
+
+            <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+              <i class="fas fa-list me-1"></i>
+              <!-- <i class="fas fa-tasks me-1"></i> -->
+              My Todo-s
+            </p>
+
+            <div class=" ">
+              <!-- <div  *ngIf="input?.errors"  class="alert alert-danger text-center p-2">
+                <p class="m-0 p-0">{{input?.errors|json}}</p>
+
+              </div> -->
+              <div class="card">
+                <div class="card-body">
+                  <form (ngSubmit)="createToDo()">
+                    <div class="d-flex flex-row align-items-center">
+                      <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+                        placeholder="Add new Task ..." [(ngModel)]="newTodo.title" pattern="[A-Z a-z]{3,}"
+                        #input="ngModel" name="title" />
+
+
+
+
+
+                      <div>
+                        <button class="btn btn-primary">Add</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+
+              </div>
+              <p *ngIf="input?.errors" class="m-0 p-0 text-danger">{{input?.errors|json}}</p>
+            </div>
+
+            <hr class="my-4">
+
+            @for(todo of todos;track todo.id){
+
+            <ul class="list-group list-group-horizontal rounded-0 mb-2">
+              <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                <div class="form-check">
+                  <input class="form-check-input me-0" type="checkbox" value="" id="flexCheckChecked3" aria-label="..."
+                    [(ngModel)]="todo.completed" />
+                </div>
+              </li>
+              <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                <p class="  lead fw-normal mb-0 bg-body-tertiary w-100 ms-n2 ps-2 py-1 rounded"
+                  [ngClass]="{'text-decoration-line-through':todo.completed}" [routerLink]="['/todos',todo.id]">
+                  {{todo.title}} </p>
+              </li>
+              <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                <div class="d-flex flex-row justify-content-end mb-1">
+                  <!-- <a href="#!" class="text-info" data-mdb-tooltip-init title="Edit todo"><i
+          class="fas fa-pencil-alt me-3"></i></a> -->
+                  <a href="#!" class="text-danger" data-mdb-tooltip-init title="Delete todo"
+                    (click)="deleteToDo(todo.id)"><i class="fas fa-trash-alt"></i></a>
+                </div>
+
+              </li>
+            </ul>
+
+
+            }
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
